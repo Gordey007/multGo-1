@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class RickandmortyController {
 
-    @GetMapping("/rickandmorty")
+    @GetMapping("/cartoons/rickandmorty")
     public String rickandmorty(@RequestParam(name="name", required=false, defaultValue="World") String name, Model model) {
         model.addAttribute("name", name);
         return "rickandmorty";
