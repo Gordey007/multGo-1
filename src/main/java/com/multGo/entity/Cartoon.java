@@ -16,14 +16,13 @@ public class Cartoon {
     int season;
 //    @Temporal(TemporalType.DATE)
     //private Date release_date;
-    private Integer ratung;
-    private String name_episode;
-    private String name_cartoon_rus;
-    @Column
-    private String name_cartoon;
-    private Integer episode;
-    private String description;
-    private String abbreviation;
+//    private Integer ratung;
+     String name_episode;
+     String name_cartoon_rus;
+     String name_cartoon;
+     Integer episode;
+     String description;
+     String abbreviation;
 
 
     public Integer getId_cartoon() {
@@ -78,13 +77,13 @@ public class Cartoon {
 //        this.release_date = release_date;
 //    }
 
-    public int getRatung() {
-        return ratung;
-    }
+//    public int getRatung() {
+//        return ratung;
+//    }
 
-    public void setRatung(int ratung) {
-        this.ratung = ratung;
-    }
+//    public void setRatung(int ratung) {
+//        this.ratung = ratung;
+//    }
 
     public String getName_episode() {
         return name_episode;
