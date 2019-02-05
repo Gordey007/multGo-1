@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 
+ <!--http://localhost/cartoons/rickandmorty-->
+
 <head>
     <meta charset="utf-8" />
     <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
@@ -18,7 +20,7 @@
     <!-- CSS Just for demo purpose, don't include it in your project -->
     <link href="../assets/demo/demo.css" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="assets/css/rickandmorty.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/rickandmorty.css">
 
 </head>
 
@@ -27,7 +29,6 @@
     <div class="sidebar" data-color="rose" data-background-color="black" data-image="../assets/img/sidebar-rm.jpg">
         <!--
           Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
-
           Tip 2: you can also add an image using data-image tag
       -->
         <div class="logo">
@@ -126,439 +127,13 @@
                     <h3>Рик и Морти</h3>
                     <br>
                     <!-- карточки -->
-                    <div class="row">
+                    <div  class="row">
 
-                        <!-- карточка -->
-                        <div class="col-md-4">
-                            <div class="card card-product">
-                                <div class="card-header card-header-image" data-header-animation="true">
-                                    <a href="#pablo">
-                                        <img class="img" src="../img/Rick and Morty/1 season/1.jpg">
-                                    </a>
-                                </div>
-                                <div class="card-body">
-                                    <div class="card-actions text-center">
-                                        <button type="button" class="btn btn-danger btn-link fix-broken-card">
-                                            <i class="material-icons">build</i> Fix Header!
-                                        </button>
-                                        <p class="likedislake">
-                                            210 <img src="../img/like.png" alt="Иллюстрация" class="like">
-                                            <img src="../img/dislike.png" alt="Иллюстрация" class="dislike">10
-                                        </p>
+                        <div th:each="cartoon : ${cartoonArrayList}" class="col-md-4">
 
-                                        <!--
-                                      <button type="button" class="play" rel="tooltip" data-placement="bottom" title="Смотреть">
-                                          -->
+                            <div th:insert="~{card :: fragmenCard(name=${cartoon.name_episode}, descripton=${cartoon.description})}" class="card card-product"/>
 
-
-                                    </div>
-                                    <h4 class="card-title"> <a href="#pablo">Пилотный выпуск</a></h4>
-                                    <div class="card-description"> Морти помогает Рику нелегально перевезти из параллельного измерения мегасемена в себе. </div>
-
-                                </div>
-                                <div class="card-footer">
-                                    <div class="price">
-                                        <h4>01.01.2019</h4>
-                                    </div>
-                                    <div class="stats">
-                                        <p class="card-category"><i class="material-icons">place</i> Barcelona, Spain</p>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
-
-                        <!-- карточка -->
-                        <div class="col-md-4">
-                            <div class="card card-product">
-                                <div class="card-header card-header-image" data-header-animation="true">
-                                    <a href="#pablo">
-                                        <img class="img" src="../img/Rick and Morty/1 season/2.jpg">
-                                    </a>
-                                </div>
-                                <div class="card-body">
-                                    <div class="card-actions text-center">
-                                        <button type="button" class="btn btn-danger btn-link fix-broken-card">
-                                            <i class="material-icons">build</i> Fix Header!
-                                        </button>
-                                        <button type="button" class="btn btn-default btn-link" rel="tooltip" data-placement="bottom" title="View">
-                                            <i class="material-icons">art_track</i>
-                                        </button>
-                                        <button type="button" class="btn btn-success btn-link" rel="tooltip" data-placement="bottom" title="Edit">
-                                            <i class="material-icons">edit</i>
-                                        </button>
-                                        <button type="button" class="btn btn-danger btn-link" rel="tooltip" data-placement="bottom" title="Remove">
-                                            <i class="material-icons">close</i>
-                                        </button>
-                                    </div>
-                                    <h4 class="card-title">
-                                        <a href="#pablo">Пёс-Газонокосильщик</a> </h4>
-                                    <div class="card-description">
-                                        Рик изобретает для маленького пса Морти шлем для улучшения мыслительного процесса и тем самым ставит мир на грани захвата человечества собаками, пока в это время Рик и Морти путешествуют по снам учителя математики, пытаясь подсознательно заставить того ставить Морти хорошие оценки.
-                                    </div>
-                                </div>
-                                <div class="card-footer">
-                                    <div class="price">
-                                        <h4>01.01.2019</h4>
-                                    </div>
-                                    <div class="stats">
-                                        <p class="card-category"><i class="material-icons">place</i> Milan, Italy</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- карточка -->
-                        <div class="col-md-4">
-                            <div class="card card-product">
-                                <div class="card-header card-header-image" data-header-animation="true">
-                                    <a href="#pablo">
-                                        <img class="img" src="../img/Rick and Morty/1 season/3.jpg">
-                                    </a>
-                                </div>
-                                <div class="card-body">
-                                    <div class="card-actions text-center">
-                                        <button type="button" class="btn btn-danger btn-link fix-broken-card">
-                                            <i class="material-icons">build</i> Fix Header!
-                                        </button>
-                                        <button type="button" class="btn btn-default btn-link" rel="tooltip" data-placement="bottom" title="View">
-                                            <i class="material-icons">art_track</i>
-                                        </button>
-                                        <button type="button" class="btn btn-success btn-link" rel="tooltip" data-placement="bottom" title="Edit">
-                                            <i class="material-icons">edit</i>
-                                        </button>
-                                        <button type="button" class="btn btn-danger btn-link" rel="tooltip" data-placement="bottom" title="Remove">
-                                            <i class="material-icons">close</i>
-                                        </button>
-                                    </div>
-                                    <h4 class="card-title">
-                                        <a href="#pablo">Анатомический Парк</a>
-                                    </h4>
-                                    <div class="card-description">
-                                        Родители Джерри приезжают в гости на Рождество вместе со своим другом Джейкобом. Рик отправляет уменьшенного Морти в тело своего приятеля Рубена, где устроен анатомический парк развлечений.
-                                    </div>
-                                </div>
-                                <div class="card-footer">
-                                    <div class="price">
-                                        <h4>01.01.2019</h4>
-                                    </div>
-                                    <div class="stats">
-                                        <p class="card-category"><i class="material-icons">place</i> Milan, Italy</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- карточка -->
-                        <div class="col-md-4">
-                            <div class="card card-product">
-                                <div class="card-header card-header-image" data-header-animation="true">
-                                    <a href="#pablo">
-                                        <img class="img" src="../img/Rick and Morty/1 season/4.jpg">
-                                    </a>
-                                </div>
-                                <div class="card-body">
-                                    <div class="card-actions text-center">
-                                        <button type="button" class="btn btn-danger btn-link fix-broken-card">
-                                            <i class="material-icons">build</i> Fix Header!
-                                        </button>
-                                        <button type="button" class="btn btn-default btn-link" rel="tooltip" data-placement="bottom" title="View">
-                                            <i class="material-icons">art_track</i>
-                                        </button>
-                                        <button type="button" class="btn btn-success btn-link" rel="tooltip" data-placement="bottom" title="Добавить">
-                                            <i class="material-icons">edit</i>
-                                        </button>
-                                        <button type="button" class="btn btn-danger btn-link" rel="tooltip" data-placement="bottom" title="Remove">
-                                            <i class="material-icons">close</i>
-                                        </button>
-                                    </div>
-                                    <h4 class="card-title">
-                                        <a href="#pablo">М. Найт Шьямал-Инопланетяне</a></h4>
-                                    <div class="card-description"> Зигерионцы помещают Джерри и Рика в симуляцию, чтобы узнать секрет изготовления концентрированной темной материи. </div>
-                                </div>
-                                <div class="card-footer">
-                                    <div class="price">
-                                        <h4>01.01.2019</h4>
-                                    </div>
-                                    <div class="stats">
-                                        <p class="card-category"><i class="material-icons">place</i> Barcelona, Spain</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- карточка -->
-                        <div class="col-md-4">
-                            <div class="card card-product">
-                                <div class="card-header card-header-image" data-header-animation="true">
-                                    <a href="#pablo">
-                                        <img class="img" src="../img/Rick and Morty/1 season/5.jpg">
-                                    </a>
-                                </div>
-                                <div class="card-body">
-                                    <div class="card-actions text-center">
-                                        <button type="button" class="btn btn-danger btn-link fix-broken-card">
-                                            <i class="material-icons">build</i> Fix Header!
-                                        </button>
-                                        <button type="button" class="btn btn-default btn-link" rel="tooltip" data-placement="bottom" title="View">
-                                            <i class="material-icons">art_track</i>
-                                        </button>
-                                        <button type="button" class="btn btn-success btn-link" rel="tooltip" data-placement="bottom" title="Edit">
-                                            <i class="material-icons">edit</i>
-                                        </button>
-                                        <button type="button" class="btn btn-danger btn-link" rel="tooltip" data-placement="bottom" title="Remove">
-                                            <i class="material-icons">close</i>
-                                        </button>
-                                    </div>
-                                    <h4 class="card-title">
-                                        <a href="#pablo">Мисиксы крушат</a> </h4>
-                                    <div class="card-description">
-                                        Морти обижается на Рика, из-за того, что он всегда командует в их приключениях, тогда они отправляются в фентези измерение, чтобы раздобыть золота жителям деревни и руководит всем этим Морти. Рик оставляет семье коробку с Мисиксами, синими существами, которые помогают тому кто нажал на кнопку и умирают. </div>
-                                </div>
-                                <div class="card-footer">
-                                    <div class="price">
-                                        <h4>01.01.2019</h4>
-                                    </div>
-                                    <div class="stats">
-                                        <p class="card-category"><i class="material-icons">place</i> Milan, Italy</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- карточка -->
-                        <div class="col-md-4">
-                            <div class="card card-product">
-                                <div class="card-header card-header-image" data-header-animation="true">
-                                    <a href="#pablo">
-                                        <img class="img" src="../img/Rick and Morty/1 season/6.jpg">
-                                    </a>
-                                </div>
-                                <div class="card-body">
-                                    <div class="card-actions text-center">
-                                        <button type="button" class="btn btn-danger btn-link fix-broken-card">
-                                            <i class="material-icons">build</i> Fix Header!
-                                        </button>
-                                        <button type="button" class="btn btn-default btn-link" rel="tooltip" data-placement="bottom" title="View">
-                                            <i class="material-icons">art_track</i>
-                                        </button>
-                                        <button type="button" class="btn btn-success btn-link" rel="tooltip" data-placement="bottom" title="Edit">
-                                            <i class="material-icons">edit</i>
-                                        </button>
-                                        <button type="button" class="btn btn-danger btn-link" rel="tooltip" data-placement="bottom" title="Remove">
-                                            <i class="material-icons">close</i>
-                                        </button>
-                                    </div>
-                                    <h4 class="card-title">
-                                        <a href="#pablo">Вакцина Рика №9</a>
-                                    </h4>
-                                    <div class="card-description">
-                                        В школе проводится вечеринка для привлечения внимания к эпидемии гриппа. Морти просит Рика приготовить любовную смесь, чтобы Джессика из класса влюбилась в него. Но из-за болезни вакцина выходит из под контроля, и Морти влюбляет в себя весь мир. Рик придумывает решение этой проблемы, но это приводит к еще большей катастрофе.
-                                    </div>
-                                </div>
-                                <div class="card-footer">
-                                    <div class="price">
-                                        <h4>01.01.2019</h4>
-                                    </div>
-                                    <div class="stats">
-                                        <p class="card-category"><i class="material-icons">place</i> Milan, Italy</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- карточка -->
-                        <div class="col-md-4">
-                            <div class="card card-product">
-                                <div class="card-header card-header-image" data-header-animation="true">
-                                    <a href="#pablo">
-                                        <img class="img" src="../img/Rick and Morty/1 season/7.jpg">
-                                    </a>
-                                </div>
-                                <div class="card-body">
-                                    <div class="card-actions text-center">
-                                        <button type="button" class="btn btn-danger btn-link fix-broken-card">
-                                            <i class="material-icons">build</i> Fix Header!
-                                        </button>
-                                        <button type="button" class="btn btn-default btn-link" rel="tooltip" data-placement="bottom" title="View">
-                                            <i class="material-icons">art_track</i>
-                                        </button>
-                                        <button type="button" class="btn btn-success btn-link" rel="tooltip" data-placement="bottom" title="222">
-                                            <i class="material-icons">edit</i>
-                                        </button>
-                                        <button type="button" class="btn btn-danger btn-link" rel="tooltip" data-placement="bottom" title="Remove">
-                                            <i class="material-icons">close</i>
-                                        </button>
-                                    </div>
-                                    <h4 class="card-title">
-                                        <a href="#pablo">Растущий Газорпазорп</a></h4>
-                                    <div class="card-description"> Во время путешествия Морти упрашивает Рика купить секс-робота в космической комиссионке, который на следующий день рожает ребенка. Для того что бы исправить эту проблему, Рик и Самер отправляются на планету роботов. А Морти решает остаться со своим новорождённый сыном, и воспитывает его дома один. </div>
-                                </div>
-                                <div class="card-footer">
-                                    <div class="price">
-                                        <h4>01.01.2019</h4>
-                                    </div>
-                                    <div class="stats">
-                                        <p class="card-category"><i class="material-icons">place</i> Barcelona, Spain</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- карточка -->
-                        <div class="col-md-4">
-                            <div class="card card-product">
-                                <div class="card-header card-header-image" data-header-animation="true">
-                                    <a href="#pablo">
-                                        <img class="img" src="../img/Rick and Morty/1 season/8.jpg">
-                                    </a>
-                                </div>
-                                <div class="card-body">
-                                    <div class="card-actions text-center">
-                                        <button type="button" class="btn btn-danger btn-link fix-broken-card">
-                                            <i class="material-icons">build</i> Fix Header!
-                                        </button>
-                                        <button type="button" class="btn btn-default btn-link" rel="tooltip" data-placement="bottom" title="View">
-                                            <i class="material-icons">art_track</i>
-                                        </button>
-                                        <button type="button" class="btn btn-success btn-link" rel="tooltip" data-placement="bottom" title="Edit">
-                                            <i class="material-icons">edit</i>
-                                        </button>
-                                        <button type="button" class="btn btn-danger btn-link" rel="tooltip" data-placement="bottom" title="Remove">
-                                            <i class="material-icons">close</i>
-                                        </button>
-                                    </div>
-                                    <h4 class="card-title">
-                                        <a href="#pablo">Рикнута славы</a> </h4>
-                                    <div class="card-description">
-                                        Рик разбирает и модифицирует старую телевизионную приставку. Теперь она транслирует все каналы из всех мыслимых и немыслимых реальностей. Среди передач, про живую кукурузу и парня поедающего собственные фекалии, Джерри натыкается на самого себя из параллельной вселенной, где он богат и успешен.
-                                    </div>
-                                </div>
-                                <div class="card-footer">
-                                    <div class="price">
-                                        <h4>01.01.2019</h4>
-                                    </div>
-                                    <div class="stats">
-                                        <p class="card-category"><i class="material-icons">place</i> Milan, Italy</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- карточка -->
-                        <div class="col-md-4">
-                            <div class="card card-product">
-                                <div class="card-header card-header-image" data-header-animation="true">
-                                    <a href="#pablo">
-                                        <img class="img" src="../img/Rick and Morty/1 season/9.jpg">
-                                    </a>
-                                </div>
-                                <div class="card-body">
-                                    <div class="card-actions text-center">
-                                        <button type="button" class="btn btn-danger btn-link fix-broken-card">
-                                            <i class="material-icons">build</i> Fix Header!
-                                        </button>
-                                        <button type="button" class="btn btn-default btn-link" rel="tooltip" data-placement="bottom" title="View">
-                                            <i class="material-icons">art_track</i>
-                                        </button>
-                                        <button type="button" class="btn btn-success btn-link" rel="tooltip" data-placement="bottom" title="Edit">
-                                            <i class="material-icons">edit</i>
-                                        </button>
-                                        <button type="button" class="btn btn-danger btn-link" rel="tooltip" data-placement="bottom" title="Remove">
-                                            <i class="material-icons">close</i>
-                                        </button>
-                                    </div>
-                                    <h4 class="card-title">
-                                        <a href="#pablo">Надвигается Нечто Риканутое</a>
-                                    </h4>
-                                    <div class="card-description">
-                                        В школе Морти задают научный проект, который он по традиции решает делать со своим отцом. Самер наконец-то находит себе работу, но по случайному стечению обстоятельств, ее босом оказывается сам Люцифер. Он открывает лавку, в которой дает людям магические штуки, но взамен накладывает на них проклятие.
-                                    </div>
-                                </div>
-                                <div class="card-footer">
-                                    <div class="price">
-                                        <h4>01.01.2019</h4>
-                                    </div>
-                                    <div class="stats">
-                                        <p class="card-category"><i class="material-icons">place</i> Milan, Italy</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- карточка -->
-                        <div class="col-md-4">
-                            <div class="card card-product">
-                                <div class="card-header card-header-image" data-header-animation="true">
-                                    <a href="#pablo">
-                                        <img class="img" src="../img/Rick and Morty/1 season/10.jpg">
-                                    </a>
-                                </div>
-                                <div class="card-body">
-                                    <div class="card-actions text-center">
-                                        <button type="button" class="btn btn-danger btn-link fix-broken-card">
-                                            <i class="material-icons">build</i> Fix Header!
-                                        </button>
-                                        <button type="button" class="btn btn-default btn-link" rel="tooltip" data-placement="bottom" title="View">
-                                            <i class="material-icons">art_track</i>
-                                        </button>
-                                        <button type="button" class="btn btn-success btn-link" rel="tooltip" data-placement="bottom" title="Добавить">
-                                            <i class="material-icons">edit</i>
-                                        </button>
-                                        <button type="button" class="btn btn-danger btn-link" rel="tooltip" data-placement="bottom" title="Remove">
-                                            <i class="material-icons">close</i>
-                                        </button>
-                                    </div>
-                                    <h4 class="card-title"> <a href="#pablo">Поймать враждебного Рика из рода Рика</a></h4>
-                                    <div class="card-description"> Прошел ровно год с того дня, когда Рик переехал к дочери, Бэт готовит отцу оладушки в форме летающих тарелок, но всё это спокойствие нарушают трое Риков из других измерений, они похищают Морти и Рика, чтобы осудить за убийство других Риков. На совете Рику выносят приговор, но ему удается сбежать, чтобы найти настоящего убийцу. </div>
-                                </div>
-                                <div class="card-footer">
-                                    <div class="price">
-                                        <h4>01.01.2019</h4>
-                                    </div>
-                                    <div class="stats">
-                                        <p class="card-category"><i class="material-icons">place</i> Barcelona, Spain</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- карточка -->
-                        <div class="col-md-4">
-                            <div class="card card-product">
-                                <div class="card-header card-header-image" data-header-animation="true">
-                                    <a href="#pablo">
-                                        <img class="img" src="../img/Rick and Morty/1 season/11.jpg">
-                                    </a>
-                                </div>
-                                <div class="card-body">
-                                    <div class="card-actions text-center">
-                                        <button type="button" class="btn btn-danger btn-link fix-broken-card">
-                                            <i class="material-icons">build</i> Fix Header!
-                                        </button>
-                                        <button type="button" class="btn btn-default btn-link" rel="tooltip" data-placement="bottom" title="View">
-                                            <i class="material-icons">art_track</i>
-                                        </button>
-                                        <button type="button" class="btn btn-success btn-link" rel="tooltip" data-placement="bottom" title="Edit">
-                                            <i class="material-icons">edit</i>
-                                        </button>
-                                        <button type="button" class="btn btn-danger btn-link" rel="tooltip" data-placement="bottom" title="Remove">
-                                            <i class="material-icons">close</i>
-                                        </button>
-                                    </div>
-                                    <h4 class="card-title"> <a href="#pablo">Задача Рика</a> </h4>
-                                    <div class="card-description">
-                                        Джерри и Бэт уезжают на выходные в тематический круиз по Титанику. Рик и Саммер устраивают межгалактическую тусу, на которую приходят всего несколько представителей человеческой расы. Морти во что бы это ни стало, пытается прекратить вечеринку, что бы родители не запретили ему веселиться с Риком.
-                                    </div>
-                                </div>
-                                <div class="card-footer">
-                                    <div class="price">
-                                        <h4>01.01.2019</h4>
-                                    </div>
-                                    <div class="stats">
-                                        <p class="card-category"><i class="material-icons">place</i> Milan, Italy</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-
 
 
                     </div>
@@ -751,24 +326,16 @@
     $(document).ready(function() {
         $().ready(function() {
             $sidebar = $('.sidebar');
-
             $sidebar_img_container = $sidebar.find('.sidebar-background');
-
             $full_page = $('.full-page');
-
             $sidebar_responsive = $('body > .navbar-collapse');
-
             window_width = $(window).width();
-
             fixed_plugin_open = $('.sidebar .sidebar-wrapper .nav li.active a p').html();
-
             if (window_width > 767 && fixed_plugin_open == 'Dashboard') {
                 if ($('.fixed-plugin .dropdown').hasClass('show-dropdown')) {
                     $('.fixed-plugin .dropdown').addClass('open');
                 }
-
             }
-
             $('.fixed-plugin a').click(function(event) {
                 // Alex if we click on switch, stop propagation of the event, so the dropdown will not be hide, otherwise we set the  section active
                 if ($(this).hasClass('switch-trigger')) {
@@ -779,141 +346,104 @@
                     }
                 }
             });
-
             $('.fixed-plugin .active-color span').click(function() {
                 $full_page_background = $('.full-page-background');
-
                 $(this).siblings().removeClass('active');
                 $(this).addClass('active');
-
                 var new_color = $(this).data('color');
-
                 if ($sidebar.length != 0) {
                     $sidebar.attr('data-color', new_color);
                 }
-
                 if ($full_page.length != 0) {
                     $full_page.attr('filter-color', new_color);
                 }
-
                 if ($sidebar_responsive.length != 0) {
                     $sidebar_responsive.attr('data-color', new_color);
                 }
             });
-
             $('.fixed-plugin .background-color .badge').click(function() {
                 $(this).siblings().removeClass('active');
                 $(this).addClass('active');
-
                 var new_color = $(this).data('background-color');
-
                 if ($sidebar.length != 0) {
                     $sidebar.attr('data-background-color', new_color);
                 }
             });
-
             $('.fixed-plugin .img-holder').click(function() {
                 $full_page_background = $('.full-page-background');
-
                 $(this).parent('li').siblings().removeClass('active');
                 $(this).parent('li').addClass('active');
-
-
                 var new_image = $(this).find("img").attr('src');
-
                 if ($sidebar_img_container.length != 0 && $('.switch-sidebar-image input:checked').length != 0) {
                     $sidebar_img_container.fadeOut('fast', function() {
                         $sidebar_img_container.css('background-image', 'url("' + new_image + '")');
                         $sidebar_img_container.fadeIn('fast');
                     });
                 }
-
                 if ($full_page_background.length != 0 && $('.switch-sidebar-image input:checked').length != 0) {
                     var new_image_full_page = $('.fixed-plugin li.active .img-holder').find('img').data('src');
-
                     $full_page_background.fadeOut('fast', function() {
                         $full_page_background.css('background-image', 'url("' + new_image_full_page + '")');
                         $full_page_background.fadeIn('fast');
                     });
                 }
-
                 if ($('.switch-sidebar-image input:checked').length == 0) {
                     var new_image = $('.fixed-plugin li.active .img-holder').find("img").attr('src');
                     var new_image_full_page = $('.fixed-plugin li.active .img-holder').find('img').data('src');
-
                     $sidebar_img_container.css('background-image', 'url("' + new_image + '")');
                     $full_page_background.css('background-image', 'url("' + new_image_full_page + '")');
                 }
-
                 if ($sidebar_responsive.length != 0) {
                     $sidebar_responsive.css('background-image', 'url("' + new_image + '")');
                 }
             });
-
             $('.switch-sidebar-image input').change(function() {
                 $full_page_background = $('.full-page-background');
-
                 $input = $(this);
-
                 if ($input.is(':checked')) {
                     if ($sidebar_img_container.length != 0) {
                         $sidebar_img_container.fadeIn('fast');
                         $sidebar.attr('data-image', '#');
                     }
-
                     if ($full_page_background.length != 0) {
                         $full_page_background.fadeIn('fast');
                         $full_page.attr('data-image', '#');
                     }
-
                     background_image = true;
                 } else {
                     if ($sidebar_img_container.length != 0) {
                         $sidebar.removeAttr('data-image');
                         $sidebar_img_container.fadeOut('fast');
                     }
-
                     if ($full_page_background.length != 0) {
                         $full_page.removeAttr('data-image', '#');
                         $full_page_background.fadeOut('fast');
                     }
-
                     background_image = false;
                 }
             });
-
             $('.switch-sidebar-mini input').change(function() {
                 $body = $('body');
-
                 $input = $(this);
-
                 if (md.misc.sidebar_mini_active == true) {
                     $('body').removeClass('sidebar-mini');
                     md.misc.sidebar_mini_active = false;
-
                     $('.sidebar .sidebar-wrapper, .main-panel').perfectScrollbar();
-
                 } else {
-
                     $('.sidebar .sidebar-wrapper, .main-panel').perfectScrollbar('destroy');
-
                     setTimeout(function() {
                         $('body').addClass('sidebar-mini');
-
                         md.misc.sidebar_mini_active = true;
                     }, 300);
                 }
-
                 // we simulate the window Resize so the charts will get updated in realtime.
                 var simulateWindowResize = setInterval(function() {
                     window.dispatchEvent(new Event('resize'));
                 }, 180);
-
                 // we stop the simulation of Window Resize after the animations are completed
                 setTimeout(function() {
                     clearInterval(simulateWindowResize);
                 }, 1000);
-
             });
         });
     });
@@ -922,9 +452,7 @@
     $(document).ready(function() {
         // Javascript method's body can be found in assets/js/demos.js
         md.initDashboardPageCharts();
-
         md.initVectorMap();
-
     });
 </script>
 </body>

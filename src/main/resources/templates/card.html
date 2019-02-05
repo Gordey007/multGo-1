@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+
+<div th:fragment="fragmenCard(name, descripton)" >
+
+    <!--<div class="col-md-4">-->
+        <!--<div class="card card-product">-->
+            <div class="card-header card-header-image" data-header-animation="true">
+                <a href="#pablo">
+                    <img class="img" src="../img/Rick and Morty/1 season/1.jpg">
+                </a>
+            </div>
+            <div class="card-body">
+                <div class="card-actions text-center">
+                    <button type="button" class="btn btn-danger btn-link fix-broken-card">
+                        <i class="material-icons">build</i> Fix Header!
+                    </button>
+                    <p class="likedislake">
+                        210 <img src="../img/like.png" alt="Иллюстрация" class="like">
+                        <img src="../img/dislike.png" alt="Иллюстрация" class="dislike">10
+                    </p>
+
+                    <!--
+                  <button type="button" class="play" rel="tooltip" data-placement="bottom" title="Смотреть">
+                      -->
+
+
+                </div>
+                <h4 class="card-title"> <a href="#pablo" th:text="${name}"></a></h4>
+                <div class="card-description" th:text="${descripton}"></div>
+
+            </div>
+            <div class="card-footer">
+                <div class="price">
+                    <h4>01.01.2019</h4>
+                </div>
+                <div class="stats">
+                    <p class="card-category"><i class="material-icons">place</i> Barcelona, Spain</p>
+                </div>
+            </div>
+        <!--</div>-->
+    <!--</div>-->
+
+</div> <!--th:fragment="copy "-->
+
+</body>
+</html>
