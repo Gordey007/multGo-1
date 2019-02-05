@@ -2,13 +2,13 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <body>
 
-<div th:fragment="fragmenCard(name, descripton)" >
+<div th:fragment="fragmenCard(name, descripton, poster)" >
 
     <!--<div class="col-md-4">-->
         <!--<div class="card card-product">-->
             <div class="card-header card-header-image" data-header-animation="true">
                 <a href="#pablo">
-                    <img class="img" src="../img/Rick and Morty/1 season/1.jpg">
+                    <img class="img" th:src="${poster}">
                 </a>
             </div>
             <div class="card-body">

@@ -131,7 +131,7 @@
 
                         <div th:each="cartoon : ${cartoonArrayList}" class="col-md-4">
 
-                            <div th:insert="~{card :: fragmenCard(name=${cartoon.name_episode}, descripton=${cartoon.description})}" class="card card-product"/>
+                            <div th:insert="~{card :: fragmenCard(name=${cartoon.name_episode}, descripton=${cartoon.description}, poster=${cartoon.getPoster()})}" class="card card-product"/>
 
                         </div>
 

@@ -23,7 +23,13 @@ public class Cartoon {
      Integer episode;
      String description;
      String abbreviation;
+     private final String path = "../img/Rick and Morty/";
 
+
+    public String getPoster() {
+
+        return path+season+"/"+(episode+(100*season))+".jpg";
+    }
 
     public Integer getId_cartoon() {
         return id_cartoon;
