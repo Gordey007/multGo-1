@@ -50,7 +50,7 @@
                                 </p>
                             </a>
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                                <a th:each="i: ${#numbers.sequence(1, seasons)}" class="dropdown-item" th:href="${'rickandmorty?season='+i}" th:text="${'сезон '+i}"/>
+                                <a th:each="i: ${#numbers.sequence(1, seasons)}" class="dropdown-item" th:href="${'../rickandmorty/s'+i}" th:text="${'сезон '+i}"/>
                             </div>
                         </li>
                     </ul>

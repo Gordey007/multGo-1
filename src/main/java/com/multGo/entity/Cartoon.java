@@ -2,7 +2,6 @@ package com.multGo.entity;
 
 import javax.persistence.*;
 import javax.persistence.Entity;
-import java.sql.Date;
 
 
 @Entity
@@ -19,7 +18,8 @@ public class Cartoon {
 //    private Integer ratung;
      String name_episode;
      String name_cartoon_rus;
-     String name_cartoon;
+     @Column(name = "name_cartoon")
+     String name;
      Integer episode;
      String description;
      String abbreviation;
@@ -107,11 +107,11 @@ public class Cartoon {
         this.name_cartoon_rus = name_cartoon_rus;
     }
 
-    public String getName_cartoon() {
-        return name_cartoon;
+    public String getName() {
+        return name;
     }
 
-    public void setName_cartoon(String name_cartoon) {
-        this.name_cartoon = name_cartoon;
+    public void setName(String name) {
+        this.name = name;
     }
 }

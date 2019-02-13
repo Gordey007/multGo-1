@@ -46,7 +46,7 @@ public class Parser {
         int ep = 1;
         for (int i = 0; i < rows.size(); i++) {
             cartoon = new Cartoon();
-            cartoon.setName_cartoon(name);
+            cartoon.setName(name);
             cartoon.setName_cartoon_rus(nameRUS);
             try {
                 System.out.println(rows.get(i).select("a").get(1).text());
