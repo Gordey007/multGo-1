@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.Collection;
+import java.util.Optional;
 
 @Controller
 public class RickandmortyController {
@@ -44,11 +45,13 @@ public class RickandmortyController {
 
 
     @GetMapping("rickandmorty/{season}/{episode}")
-    public String player( Model model) {
+    public String player( Model model, @PathVariable String season, @PathVariable String episode) {
+        int s = Integer.parseInt(season.substring(1));
+        int e = Integer.parseInt(episode.substring(1));
 
-        cartoonArrayList = (Collection<Cartoon>) cartoonRepository.findAll();
-        model.addAttribute("cartoonArrayList", cartoonArrayList);
-        return "player";
+        Optional<Cartoon> cartoon = cartoonRepository.findById(10000+(100*s)+e);
+        model.addAttribute("cartoon", cartoon.get());
+        return "playerTrue";
     }
 
     @GetMapping("/parser")
